@@ -46,6 +46,9 @@ int main()
     double msrg[2005];
     for(int i=1;i<=5;i++)getline(inputFile,x);
     freopen("msrg.txt","w",stdout);
+    cout<<"step"<<"     ";
+    for(int i=tarchain;i<=endchain;i++)cout<<"Mol_ID"<<i<<"     ";
+    cout<<endl;
     for (long int s=0;s<maxstep;s++)
     {
         for (int i=1;i<=2002;i++)
@@ -75,12 +78,17 @@ int main()
             }
         }
         for (int k=tarchain;k<=endchain;k++)msrg[k]=msrg[k]/chainlen[k];
+        cout<<s<<"      ";
         for(long int i=tarchain;i<=endchain;i++)
         {
-            cout<<s<<"      "<<i<<"        ";
+            // cout<<s<<"      "<<i<<"        ";
+            // printf("%.6f",msrg[i]);
+            // cout<<endl;
+            
             printf("%.6f",msrg[i]);
-            cout<<endl;
+            cout<<"     ";
         }
+        cout<<endl;
         for(int i=1;i<=10;i++)getline(inputFile,x);
     }
     inputFile.close(); // close the input file when finished
